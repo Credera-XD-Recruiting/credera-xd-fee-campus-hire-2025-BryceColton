@@ -43,6 +43,8 @@ export const ProfileGroups = () => {
 
   const { groups } = data;
 
+  console.log(groups);
+
   return (
     <section id="profile-groups">
       <h2 className="page-heading-2">Groups</h2>
@@ -50,7 +52,7 @@ export const ProfileGroups = () => {
         {groups.map(group => (
           <li className="profile-group-results-item" key={group.id}>
             <a
-              className="profile-group-results-card content-card fade-in"
+              className={`profile-group-results-card content-card fade-in activity-${group.activity.toLowerCase()}`}
               href={group.href}
             >
               <div className="profile-group-avatar">
