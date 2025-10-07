@@ -50,8 +50,6 @@ export const ProfileFriends = () => {
   const { friends } = data;
 
 
-  console.log(friends)
-
   return (
     <section id="profile-friends">
       <div className="content-card fade-in">
