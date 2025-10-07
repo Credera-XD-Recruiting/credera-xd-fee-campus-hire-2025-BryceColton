@@ -69,3 +69,21 @@
 #profile-friends .skeleton-block {
     margin-bottom: 4px;
 }
+
+.is-top-friend {
+  position: relative;
+  box-shadow: 0 0 0 1px orange;
+}
+
+.is-top-friend::after {
+  content: "TOP";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background:orange;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 10px;
+}
