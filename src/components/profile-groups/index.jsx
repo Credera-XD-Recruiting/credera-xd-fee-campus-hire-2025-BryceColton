@@ -43,7 +43,6 @@ export const ProfileGroups = () => {
 
   const { groups } = data;
 
-  console.log(groups);
 
   return (
     <section id="profile-groups">
