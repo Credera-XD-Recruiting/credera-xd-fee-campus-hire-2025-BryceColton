@@ -49,6 +49,9 @@ export const ProfileFriends = () => {
 
   const { friends } = data;
 
+
+  console.log(friends)
+
   return (
     <section id="profile-friends">
       <div className="content-card fade-in">
@@ -65,6 +68,11 @@ export const ProfileFriends = () => {
                   {friend.jobTitle} @ {friend.companyName}
                 </p>
               </div>
+              {friend.topFriend && (
+                <div className="top-friend-wrapper">
+                  <span className="page-micro">Top Friend</span>
+                </div>
+              )}
             </li>
           ))}
         </ul>
