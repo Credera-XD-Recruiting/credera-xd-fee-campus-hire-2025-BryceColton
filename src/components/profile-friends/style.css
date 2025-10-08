@@ -50,6 +50,18 @@
   width: 100%;
 }
 
+.profile-list-item-avatar .avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+  color: #fff;
+  font-size: 1.75rem;      
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 .profile-list-item-info {
   width: 100%;
   margin-left: 24px;

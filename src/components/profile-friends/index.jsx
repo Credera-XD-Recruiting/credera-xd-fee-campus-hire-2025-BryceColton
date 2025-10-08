@@ -51,6 +51,8 @@ export const ProfileFriends = () => {
 
   const getLast = (lastname) => lastname.trim().split(" ").pop().toLowerCase();
 
+  const getInitials = (name) => name.charAt(0).toUpperCase() + getLast(name).charAt(0).toUpperCase();
+
   const topFriends = friends.filter(f => f.topFriend); 
   const otherFriends = friends
     .filter(f => !f.topFriend)
@@ -75,7 +77,15 @@ export const ProfileFriends = () => {
               key={friend.id}
             >
               <div className="profile-list-item-avatar">
-                <img className="loading" src={friend.image} />
+                {friend.image ? (
+                  <img
+                    className="loading"
+                    src={friend.image}
+                    alt={getInitials(friend.name)}
+                  />
+                ) : (
+                  <span className="avatar-initials">{getInitials(friend.name)}</span>
+                )}
               </div>
               <div className="profile-list-item-info">
                 <p className="page-paragraph">{friend.name}</p>
