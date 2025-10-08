@@ -63,3 +63,100 @@
   text-align: right;
   white-space: nowrap;
 }
+
+.post-collapsible {
+  position: relative;
+  max-height: 2rem; 
+  overflow: hidden;
+  transition: max-height .3s ease;
+  margin-bottom: .4rem;
+}
+.post-collapsible.is-expanded {
+  max-height: 100vh;
+}
+.fade-out-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2.2rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  pointer-events: none;
+}
+.post-toggle-btn {
+  background: none;
+  border: 0;
+  color: #1366d6;
+  font-weight: 600;
+  font-size: .75rem;
+  cursor: pointer;
+  margin-bottom: .5rem;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.post-toggle-btn:focus {
+  outline: none;
+}
+
+/* Accordion */
+.post-accordion {
+  border: 1px solid var(--grayscale_3,#ddd);
+  border-radius: 8px;
+  background: var(--grayscale_1,#fafafa);
+  overflow: hidden;
+}
+.post-accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: .85rem 1rem .75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  position: relative;
+  font: inherit;
+}
+.post-accordion-inline-meta {
+  font-size: .65rem;
+  opacity: .75;
+}
+.post-accordion-trigger .chevron {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: .6rem;
+  height: .6rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform .25s;
+}
+.post-accordion-trigger[aria-expanded="true"] .chevron {
+  transform: translateY(-50%) rotate(-135deg);
+}
+.post-accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+.post-accordion-panel.is-open {
+  max-height: 500px;
+}
+.post-accordion-body {
+  padding: .25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+/* Desktop only */
+@media (min-width: 768px) {
+  .post-accordion { display: none; }
+}
+
+/* Mobile only */
+@media (max-width: 767px) {
+  .post-card { display: none; }
+}
