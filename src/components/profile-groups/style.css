@@ -36,13 +36,21 @@
   background-color: var(--grayscale_1);
   text-decoration: none;
   color: var(--midnight_black);
-  border: 6px solid transparent; /* added */
+  border: 0;
 }
 
-.profile-group-results-card.activity-active { border-color:#52C1AD; }
-.profile-group-results-card.activity-moderate { border-color:#58B1C9; }
-.profile-group-results-card.activity-low { border-color:#C152A2; }
-.profile-group-results-card.activity-inactive { border-color:#C4C4C4; }
+.profile-group-results-card.activity-active {
+  background-color: #52C1AD;
+}
+.profile-group-results-card.activity-moderate {
+  background-color: #58B1C9;
+}
+.profile-group-results-card.activity-low {
+  background-color: #C152A2;
+}
+.profile-group-results-card.activity-inactive {
+  background-color: #C4C4C4;
+}
 
 .profile-group-content {
   padding: 16px 8px;
