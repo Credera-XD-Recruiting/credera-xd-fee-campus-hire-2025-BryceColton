@@ -39,6 +39,19 @@
   border: 0;
 }
 
+.profile-group-results-card.is-favorite::before {
+  content: "FAVORITE";
+  position: absolute;
+  top: 8px;
+  left: -46px;
+  transform: rotate(-45deg);
+  background: #f5b400;
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 44px 8px 44px;
+}
 .profile-group-results-card.activity-active {
   background-color: #52C1AD;
 }

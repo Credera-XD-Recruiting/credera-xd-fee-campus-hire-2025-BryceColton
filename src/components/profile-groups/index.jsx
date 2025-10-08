@@ -43,15 +43,18 @@ export const ProfileGroups = () => {
 
   const { groups } = data;
 
+    const favoriteGroups = groups.filter(g => g.favorite);
+    const nonFavoriteGroups = groups.filter(g => !g.favorite);
+    const orderedGroups = [...favoriteGroups, ...nonFavoriteGroups];
 
   return (
     <section id="profile-groups">
       <h2 className="page-heading-2">Groups</h2>
       <ul className="profile-group-results fade-in">
-        {groups.map(group => (
+        {orderedGroups.map(group => (
           <li className="profile-group-results-item" key={group.id}>
             <a
-              className={`profile-group-results-card content-card fade-in activity-${group.activity.toLowerCase()}`}
+              className={`profile-group-results-card content-card fade-in activity-${group.activity.toLowerCase()} ${group.favorite ? 'is-favorite' : ''}`}
               href={group.href}
             >
               <div className="profile-group-avatar">
